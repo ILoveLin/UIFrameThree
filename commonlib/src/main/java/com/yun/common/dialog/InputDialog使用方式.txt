@@ -1,0 +1,34 @@
+InputDialog使用方式
+
+https://github.com/getActivity/AndroidProject
+
+
+ new InputDialog.Builder(this)
+                // 标题可以不用填写
+                .setTitle("修改昵称")
+                // 内容可以不用填写
+                .setContent("")
+                // 提示可以不用填写
+                .setHint("请输入昵称")
+                // 确定按钮文本
+                .setConfirm(getString(R.string.common_confirm))
+                // 设置 null 表示不显示取消按钮
+                .setCancel(getString(R.string.common_cancel))
+                //.setAutoDismiss(false) // 设置点击按钮后不关闭对话框
+                .setListener(new InputDialog.OnListener() {
+
+                    @Override
+                    public void onConfirm(BaseDialog dialog, String content) {
+//                        showToast("确定了：" + content);
+
+                        sendInputNameRequest(content);
+
+
+                    }
+
+                    @Override
+                    public void onCancel(BaseDialog dialog) {
+//                        showToast("取消了");
+                    }
+                })
+                .show();

@@ -1,0 +1,2 @@
+rootProject.name='uiframev2'
+include ':app', ':commonlib'
